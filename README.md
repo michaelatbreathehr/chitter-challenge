@@ -131,3 +131,16 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+Steps on creating the database
+------------------------------
+Connect to `psql` and create the `chitter_challenge` database:
+
+```
+CREATE DATABASE chitter_challenge;
+```
+
+To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
+
+01 - create peeps table and fields - id, message and date/time
