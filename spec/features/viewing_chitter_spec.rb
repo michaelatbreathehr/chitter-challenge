@@ -6,11 +6,14 @@ feature 'Viewing chitter' do
 end
 
 
-feature 'Viewing peeps' do
-  scenario 'A user can see a list of peeps' do
-    visit('/peeps')
-    expect(page).to have_content "This is my first peeps"
-    expect(page).to have_content "This is my second peeps"
-    expect(page).to have_content "This is my third peeps"
+feature 'viewing peeps' do
+  scenario 'peeps are visible' do
+    Peep.create(message: "This is my first peep")
+    Peep.create(message: "This is my second peep")
+    Peep.create(message: "This is my third peep")
+
+    visit '/peeps'
+
+    expect(page).to have_content 'This is my first peep'
   end
 end
